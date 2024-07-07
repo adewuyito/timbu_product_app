@@ -1,11 +1,8 @@
 import 'dart:collection' show MapView;
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../common/typedef/app_wide_typedefs.dart';
-
-final dioProvider = Provider<Dio>((ref) => Dio());
 
 @immutable
 class ProductKey {
@@ -92,6 +89,8 @@ class UrlPoints {
 
   static const base = "api.timbu.cloud";
   static const productEndPoint = '/products';
+
+  static String imageUrl(String imageUrl) => 'https://api.timbu.cloud/images/$imageUrl';
 
   static const path = <String, dynamic>{
     'organization_id': 'ec1622f31c164c03830c9f203e7c4dba',

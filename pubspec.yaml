@@ -8,8 +8,10 @@ environment:
 
 dependencies:
   dio: ^5.5.0+1
+  dotenv: ^4.2.0
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.1.0
   hooks_riverpod: ^2.5.1
   http: ^1.2.0
   riverpod: ^2.5.1
@@ -25,4 +27,5 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/

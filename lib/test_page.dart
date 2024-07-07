@@ -16,7 +16,7 @@ class TestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: ProductList(data: payload)),
+      body: Center(child: ProductItem(productPayLoad: payload)),
     );
   }
 }

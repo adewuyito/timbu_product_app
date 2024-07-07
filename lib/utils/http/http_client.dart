@@ -5,20 +5,15 @@ import 'package:http/http.dart' as http;
 
 class CDioHelper {
   static const String _baseUrl = 'https://api.timbu.cloud';
-  
-
 
   // Get method
-
-
   static Future<Map<String, dynamic>> get(String endPoint) async {
     final response = await http.get(Uri.parse('$_baseUrl/$endPoint'));
     return _handleResponse(response);
   }
 
   // Post method
-  static Future<Map<String, dynamic>> post(
-      String endPoint, dynamic data) async {
+  static Future<Map<String, dynamic>> post(String endPoint, dynamic data) async {
     final response = await http.post(
       Uri.parse('$_baseUrl/$endPoint'),
       headers: {'content-Type': 'application/json'},
