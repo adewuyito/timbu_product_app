@@ -49,7 +49,7 @@ class ProductItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      productPayLoad.price.toString(),
+                      '\$${productPayLoad.price.toString()}',
                       style: const TextStyle(fontSize: 12),
                     ),
                   ],

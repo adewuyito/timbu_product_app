@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:business_manager_timbu/common/extentions/text_extention.dart';
 import 'package:business_manager_timbu/features/controllers/payload_provider.dart';
 import 'package:business_manager_timbu/features/models/product_payload.dart';
@@ -34,17 +36,20 @@ class ProductView extends ConsumerWidget {
 }
 
 Widget customGridView({required List<ProductPayLoad> data}) {
+  for (var element in data) {
+    log(element.toString());
+  }
   return CustomScrollView(
     slivers: <Widget>[
       SliverAppBar(
-        toolbarHeight: CSizes.appBarHeight + 20,
+        toolbarHeight: CSizes.appBarHeight,
         centerTitle: true,
         title: "Products".toText(),
         floating: false,
         pinned: true,
       ),
       SliverPadding(
-        padding: const EdgeInsets.only(top: 8, left: 15, right: 15),
+        padding: const EdgeInsets.only(top: 8, left: 15, right: 15, bottom: 15),
         sliver: SliverGrid(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -58,7 +63,7 @@ Widget customGridView({required List<ProductPayLoad> data}) {
               return ProductItem(productPayLoad: payload);
             },
             // childCount: ProductDetails.productImages.length,
-            childCount: 8,
+            childCount: data.length,
           ),
         ),
       ),

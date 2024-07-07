@@ -1,6 +1,7 @@
 import 'dart:collection' show MapView;
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../common/typedef/app_wide_typedefs.dart';
 
@@ -57,7 +58,7 @@ class ProductPayLoad extends MapView<String, dynamic> {
 
   @override
   String toString() {
-    return "Name: $name\tPrice: $price";
+    return "Name: $name\tPrice: $price\tImageUrl: $imageUrl";
   }
 }
 
@@ -90,11 +91,12 @@ class UrlPoints {
   static const base = "api.timbu.cloud";
   static const productEndPoint = '/products';
 
-  static String imageUrl(String imageUrl) => 'https://api.timbu.cloud/images/$imageUrl';
+  static String imageUrl(String imageUrl) =>
+      'https://api.timbu.cloud/images/$imageUrl';
 
-  static const path = <String, dynamic>{
+  static final path = <String, dynamic>{
     'organization_id': 'ec1622f31c164c03830c9f203e7c4dba',
-    'Appid': 'DBP80AR4G9LAX1I',
-    'Apikey': '5fd3c1c9106c4370bddb856d9aecd7b420240706003932140223'
+    'Appid': dotenv.env['APP_ID'],
+    'Apikey': dotenv.env['API_KEY']!,
   };
 }
