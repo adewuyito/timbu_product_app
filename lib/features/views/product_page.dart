@@ -36,9 +36,6 @@ class ProductView extends ConsumerWidget {
 }
 
 Widget customGridView({required List<ProductPayLoad> data}) {
-  for (var element in data) {
-    log(element.toString());
-  }
   return CustomScrollView(
     slivers: <Widget>[
       SliverAppBar(
