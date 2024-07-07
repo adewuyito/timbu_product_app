@@ -17,7 +17,7 @@ A Flutter application that makes use of the timbu business api to display produc
    git clone https://github.com/adewuyito/timbu_product_app.git
 
 2. Navigate to the project directory:
-   cd s_timbu_app
+   cd timbu_app
 
 3. Install dependencies:
    flutter pub
