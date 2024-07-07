@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:business_manager_timbu/common/extentions/text_extention.dart';
 import 'package:business_manager_timbu/features/controllers/payload_provider.dart';
 import 'package:business_manager_timbu/features/models/product_payload.dart';
